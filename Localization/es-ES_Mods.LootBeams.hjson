@@ -1,0 +1,178 @@
+Configs: {
+	LootBeamConfig: {
+		DisplayName: Configuración
+
+		ColorOverrides: {
+			Label: Color de haz personalizado
+			Tooltip:
+				'''
+				Permite personalizar los colores del haz de luz para objetos específicos.
+				Actualmente no admite definiciones de color para toda una rareza.
+				Nota: El valor alfa no se utiliza, pero debe establecerse en 255 para una vista previa precisa del color.
+				'''
+		}
+
+		CustomWhitelist: {
+			Label: Lista blanca personalizada
+			Tooltip: Estos objetos SIEMPRE tendrán un haz de luz, independientemente de las condiciones.
+		}
+
+		CustomBlacklist: {
+			Label: Lista negra personalizada
+			Tooltip:
+				'''
+				Estos objetos NUNCA tendrán un haz de luz, independientemente de las condiciones.
+				Tiene prioridad sobre la lista blanca personalizada.
+				'''
+		}
+
+		UseMiniBeam: {
+			Label: Haz de luz minimizado
+			Tooltip:
+				'''
+				Estos objetos tendrán un haz de luz más chico, establecido en 0.5.
+				Se utiliza principalmente para monedas o para reducir las distracciones.
+				La opacidad afecta al haz de luz y al brillo de forma individual, como es habitual.
+				'''
+		}
+
+		BeamStyle: {
+			Label: Estilo del haz de luz
+			Tooltip:
+				'''
+				Permite cambiar los efectos visuales del haz de luz.
+				Configúrelo en 0 para desactivar el efecto.
+				1 = Simple, 2 = Flecha, 3 = Flecha animada
+				'''
+		}
+
+		GlowStyle: {
+			Label: Estilo del resplandor
+			Tooltip:
+				'''
+				Permite cambiar los efectos visuales del brillo.
+				Establezca en 0 para desactivar el efecto.
+				Actualmente no hay estilos adicionales implementados.
+				'''
+		}
+
+		MinRarity: {
+			Label: Rareza mínima
+			Tooltip:
+				'''
+				¿Cuál es la rareza mínima para que un objeto tenga un haz de luz?
+				Si se establece en -2, se deshabilitará por completo el haz de luz en los objetos no personalizados.
+				Los objetos de la [c/f4d58d:lista blanca] y [c/f4d58d:color de haz personalizado] no se ven afectados.
+				[c/f4d58d:Rango]: -2 a 11
+				[c/f4d58d:Predeterminado]: 1
+				'''
+		}
+
+		MinValue: {
+			Label: Valor mínimo
+			Tooltip:
+				'''
+				¿Qué valor en monedas de cobre debe tener un objeto para tener un haz de luz?
+				Recuerda: Una moneda de plata equivale a 100 de cobre, una moneda de oro equivale a 10,000 de cobre,
+				y una moneda de platino equivale a 1,000,000 de cobre.
+				Otra distinción importante es que esto es para el valor de COMPRA, no para el de venta.
+				Asegúrate de consultar la wiki para encontrar el precio de compra de un objeto.
+				[c/f4d58d:Rango]: Mayor o igual a 0
+				[c/f4d58d:Predeterminado]: 1
+				'''
+		}
+
+		HighlightQuest: {
+			Label: Resaltar objetos de misión
+			Tooltip:
+				'''
+				Haz de luz para los objetos de misión.
+				Como los objetos de misión del pescador.
+				[c/f4d58d:Predeterminado]: Sí
+				'''
+		}
+
+		HighlightExpert: {
+			Label: Resaltar objetos del modo Experto
+			Tooltip:
+				'''
+				Haz de luz para los objetos del modo Experto.
+				[c/f4d58d:Predeterminado]: Sí
+				'''
+		}
+
+		HighlightMaster: {
+			Label: Resaltar objetos del modo Maestro
+			Tooltip:
+				'''
+				Haz de luz para los objetos del modo Maestro.
+				[c/f4d58d:Predeterminado]: Sí
+				'''
+		}
+
+		BeamScale: {
+			Label: Escala del haz de luz
+			Tooltip:
+				'''
+				Los objetos de la lista [c/f4d58d:haz de luz minimizado] siempre tienen una escala de 0.5.
+				[c/f4d58d:Rango]: 0.5 a 2.0
+				[c/f4d58d:Predeterminado]: 0.75
+				'''
+		}
+
+		BeamOpacity: {
+			Label: Opacidad del haz de luz
+			Tooltip:
+				'''
+				Nivel de transparencia del haz de luz.
+				Si está en 0.0, el haz de luz será totalmente transparente.
+				[c/f4d58d:Rango]: 0.0 a 1.0
+				[c/f4d58d:Predeterminado]: 1.0
+				'''
+		}
+
+		GlowScale: {
+			Label: Escala del resplandor
+			Tooltip:
+				'''
+				Es el brillo que rodea al objeto; mientras más alto, más grande es el resplandor.
+				Los objetos de la lista [c/f4d58d:haz de luz minimizado] siempre tienen una escala de 0.5.
+				[c/f4d58d:Rango]: 0.5 a 2.0
+				[c/f4d58d:Predeterminado]: 0.75
+				'''
+		}
+
+		GlowOpacity: {
+			Label: Opacidad del resplandor
+			Tooltip:
+				'''
+				Nivel de transparencia del resplandor o brillo de los objetos.
+				[c/f4d58d:Rango]: 0.0 a 1.0
+				[c/f4d58d:Predeterminado]: 1.0
+				'''
+		}
+
+		FlashScale: {
+			Label: Escala del destello
+			Tooltip:
+				'''
+				El tamaño del destello cuando aparece un haz de luz.
+				Al establecer este valor en 1.0, se desactiva efectivamente el destello.
+				Este destello no aparece en el [c/f4d58d:haz de luz minimizado].
+				[c/f4d58d:Rango]: 1.0 a 10.0
+				[c/f4d58d:Predeterminado]: 7.5
+				'''
+		}
+
+		DrawAdditive: {
+			Label: Haz de luz más brillante
+			Tooltip:
+				'''
+				Cuando está habilitado, el haz de luz y el brillo resaltarán mucho más de lo normal (mezcla aditiva).
+				Esto es útil para que los objetos resalten incluso si tienen una pared de fondo muy clara.
+				Sin ella, el haz de luz aparecerá más oscuro, pero tendrá una coloración mucho más precisa.
+				[c/f4d58d:Predeterminado]: Sí
+				'''
+		}
+	}
+}
